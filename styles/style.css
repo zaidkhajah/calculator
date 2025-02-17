@@ -20,6 +20,13 @@ body {
     min-height: 10vh;
 }
 
+#screen {
+    background-color: black;
+    border: 5px solid black;
+    color: #F4F3EE;
+    font-size: 3rem;
+}
+
 #buttons {
     display: flex;
 }
@@ -32,7 +39,11 @@ body {
 
 #numbers button {
     flex-basis: 33%;
-    min-height: 5vh;
+    min-height: 8vh;
+    background-color: #E4572E;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 3rem;
 }
 
 #operations {
@@ -45,6 +56,10 @@ body {
 #operations button {
     flex-grow: 1;
     min-height: 25%;
+    background-color: #6290C8;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 2rem;
 }
 
 #execution {
@@ -55,4 +70,8 @@ body {
 
 #execution button {
     flex-grow: 1;
+    background-color: #3F6C51;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 2rem;
 }
