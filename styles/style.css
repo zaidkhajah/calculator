@@ -1,3 +1,7 @@
+* {
+    gap: 2px;
+}
+
 body {
     margin: 6vw;
 }
