@@ -1,10 +1,11 @@
 "use strict";
 
 const screen = document.querySelector("#screen");
-const numberBtns = document.querySelectorAll(".numbers");
-const operationBtns = document.querySelectorAll(".operations");
+const numberBtns = document.querySelector("#numbers");
+const operationBtns = document.querySelector("#operations");
 const equalBtn = document.querySelector("#equal");
 const clearBtn = document.querySelector("#clear");
+
 
 screen.value = "";
 let result = undefined;
@@ -15,28 +16,24 @@ addNumButtonListeners();
 addOperationButtonListeners();
 
 function addNumButtonListeners() {
-    for (let numBtn of numberBtns) {
-        numBtn.addEventListener("click", () => {
-            if (result || result === 0) {
-                result = undefined;
-                screen.value = "";
-            }
-            screen.value += numBtn.textContent
-        });
-    }
+    numberBtns.addEventListener("click", event => {
+        if ((result || result === 0) && String(result) === screen.value) {
+            result = undefined;
+            screen.value = "";
+        }
+        screen.value += event.target.closest("button").textContent;
+    });
 }
 
 function addOperationButtonListeners() {
-    for (let btn of operationBtns) {
-        btn.addEventListener("click", () => {
-            if (screen.value.includes("+") || screen.value.includes("-") || screen.value.includes("X") || screen.value.includes("-") || screen.value.includes("÷")) {
-                let [num1, operation, num2] = screen.value.split(" ");
-                result = operate(multPiE(num1), multPiE(num2), operation);
-                screen.value = result;
-            }
-            screen.value += (" " + btn.textContent + " ");
-        })
-    }
+    operationBtns.addEventListener("click", event => {
+        if (screen.value.includes("+") || screen.value.includes("-") || screen.value.includes("X") || screen.value.includes("-") || screen.value.includes("÷")) {
+            let [num1, operation, num2] = screen.value.split(" ");
+            result = operate(multPiE(num1), multPiE(num2), operation);
+            screen.value = result;
+        }
+        screen.value += (" " + event.target.closest("button").textContent + " ");
+    })
 }
 
 function addEqualButtonListener() {
