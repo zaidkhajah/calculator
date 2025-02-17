@@ -1,0 +1,54 @@
+body {
+    margin: 6vw;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    display: flex;
+}
+
+#display, #screen {
+    flex-grow: 1;
+    min-height: 10vh;
+}
+
+#buttons {
+    display: flex;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+#numbers button {
+    flex-basis: 33%;
+    min-height: 5vh;
+}
+
+#operations {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.3;
+    flex-wrap: wrap;
+}
+
+#operations button {
+    flex-grow: 1;
+    min-height: 25%;
+}
+
+#execution {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.2;
+}
+
+#execution button {
+    flex-grow: 1;
+}
